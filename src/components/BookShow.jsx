@@ -3,7 +3,7 @@ import { useState } from "react";
 // components
 import BookEdit from "./BookEdit";
 
-function BookShow({ book, deleteBookById }) {
+function BookShow({ book, deleteBookById, editBookById }) {
 	const [showEdit, setShowEdit] = useState(false);
 
 	const handleEditClick = () => {
@@ -14,9 +14,23 @@ function BookShow({ book, deleteBookById }) {
 		deleteBookById(book.id);
 	};
 
+	const handleSubmit = () => {
+		setShowEdit(false);
+	};
+
 	return (
 		<div className="book-show">
-			<div>{showEdit ? <BookEdit /> : <h3>{book.title}</h3>}</div>
+			<div>
+				{showEdit ? (
+					<BookEdit
+						book={book}
+						onSubmit={handleSubmit}
+						editBookById={editBookById}
+					/>
+				) : (
+					<h3>{book.title}</h3>
+				)}
+			</div>
 			<div className="actions">
 				<button className="edit" onClick={handleEditClick}>
 					Edit
