@@ -8,6 +8,11 @@ import BookList from "./components/BookList";
 function App() {
 	const [books, setBooks] = useState([]);
 
+	const deleteBookById = (id) => {
+		const updatedBooks = books.filter((book) => book.id !== id);
+		setBooks(updatedBooks);
+	};
+
 	const handleCreateBook = (title) => {
 		const updatedBooks = [...books, { id: uuidv4(), title }];
 		setBooks(updatedBooks);
@@ -15,7 +20,7 @@ function App() {
 
 	return (
 		<div className="app">
-			<BookList books={books} />
+			<BookList books={books} deleteBookById={deleteBookById} />
 			<BookCreate handleCreateBook={handleCreateBook} />
 		</div>
 	);
