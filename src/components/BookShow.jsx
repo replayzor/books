@@ -6,27 +6,24 @@ import BookEdit from "./BookEdit";
 function BookShow({ book, deleteBookById, editBookById }) {
 	const [showEdit, setShowEdit] = useState(false);
 
-	const handleEditClick = () => {
-		setShowEdit(!showEdit);
-	};
-
 	const handleDeleteClick = () => {
 		deleteBookById(book.id);
 	};
 
-	const handleSubmit = () => {
+	const handleEditClick = () => {
+		setShowEdit(!showEdit);
+	};
+
+	const handleSubmit = (id, newTitle) => {
 		setShowEdit(false);
+		editBookById(id, newTitle);
 	};
 
 	return (
 		<div className="book-show">
 			<div>
 				{showEdit ? (
-					<BookEdit
-						book={book}
-						onSubmit={handleSubmit}
-						editBookById={editBookById}
-					/>
+					<BookEdit book={book} onSubmit={handleSubmit} />
 				) : (
 					<h3>{book.title}</h3>
 				)}
