@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 // components
 import BookCreate from "./components/BookCreate";
+import BookList from "./components/BookList";
 
 function App() {
 	const [books, setBooks] = useState([]);
@@ -13,8 +14,8 @@ function App() {
 	};
 
 	return (
-		<div>
-			Total books of: {books.length}
+		<div className="app">
+			<BookList books={books} />
 			<BookCreate handleCreateBook={handleCreateBook} />
 		</div>
 	);
