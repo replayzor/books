@@ -16,7 +16,12 @@ function BookEdit({ book, onSubmit }) {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label>Title</label>
-			<input className="input" value={title} onChange={handleChange} />
+			<input
+				autoFocus
+				className="input"
+				value={title}
+				onChange={handleChange}
+			/>
 			<button className="button is-primary">Save</button>
 		</form>
 	);
