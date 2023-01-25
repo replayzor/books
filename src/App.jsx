@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 // components
 import BookCreate from "./components/BookCreate";
@@ -7,6 +7,16 @@ import BookList from "./components/BookList";
 
 function App() {
 	const [books, setBooks] = useState([]);
+
+	const fetchBooks = async () => {
+		const response = await axios.get("http://localhost:3000/books");
+
+		setBooks(response.data);
+	};
+
+	useEffect(() => {
+		fetchBooks();
+	}, []);
 
 	const editBookById = (id, newTitle) => {
 		const updatedBooks = books.map((book) => {
@@ -23,8 +33,12 @@ function App() {
 		setBooks(updatedBooks);
 	};
 
-	const handleCreateBook = (title) => {
-		const updatedBooks = [...books, { id: uuidv4(), title }];
+	const handleCreateBook = async (title) => {
+		const response = await axios.post("http://localhost:3000/books", {
+			title,
+		});
+
+		const updatedBooks = [...books, response.data];
 		setBooks(updatedBooks);
 	};
 
