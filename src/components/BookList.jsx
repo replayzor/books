@@ -1,17 +1,15 @@
+// custom hooks
+import useBookContext from "../hooks/useBooksContext";
+
 // components
 import BookShow from "./BookShow";
 
-function BookList({ books, deleteBookById, editBookById }) {
+function BookList() {
+	const { books } = useBookContext();
+
 	const renderedBooks = books.map((book) => {
 		const { id } = book;
-		return (
-			<BookShow
-				key={id}
-				book={book}
-				editBookById={editBookById}
-				deleteBookById={deleteBookById}
-			/>
-		);
+		return <BookShow key={id} book={book} />;
 	});
 
 	return <div className="book-list">{renderedBooks}</div>;

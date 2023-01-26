@@ -1,9 +1,14 @@
 import { useState } from "react";
 
+// custom hooks
+import useBooksContext from "../hooks/useBooksContext";
+
 // components
 import BookEdit from "./BookEdit";
 
-function BookShow({ book, deleteBookById, editBookById }) {
+function BookShow({ book }) {
+	const { deleteBookById } = useBooksContext();
+
 	const [showEdit, setShowEdit] = useState(false);
 
 	const handleDeleteClick = () => {
@@ -14,9 +19,8 @@ function BookShow({ book, deleteBookById, editBookById }) {
 		setShowEdit(!showEdit);
 	};
 
-	const handleSubmit = (id, newTitle) => {
+	const handleSubmit = () => {
 		setShowEdit(false);
-		editBookById(id, newTitle);
 	};
 
 	return (

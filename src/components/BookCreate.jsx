@@ -1,7 +1,11 @@
 import { useState } from "react";
 
-function BookCreate({ handleCreateBook }) {
+// custom hooks
+import useBooksContext from "../hooks/useBooksContext";
+
+function BookCreate() {
 	const [title, setTitle] = useState("");
+	const { handleCreateBook } = useBooksContext();
 
 	const handleChange = (e) => {
 		setTitle(e.target.value);
