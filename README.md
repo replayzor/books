@@ -45,9 +45,9 @@ This will start the server on http://localhost:3001 and use the db-prod.json fil
 
 Please be aware that this command assumes that you have json-server installed globally. If you don't, you could either install it globally by doing `npm i -g json-server` or use `npx json-server` instead of `json-server`
 
+### Generating Cover Images
 
-
-
+The app also utilizes the picsum.photos API to randomly generate cover images for books when they are created.
 
 ## Built With
 
