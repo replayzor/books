@@ -23,7 +23,6 @@ npm install
 
 or
 
-
 yarn install
 
 
@@ -32,13 +31,36 @@ yarn install
 npm start
 
 or
+
 yarn start
+
+### Running the JSON Server
+
+This app uses json-server to simulate a REST API for development purposes. To start the JSON server, run the following command in the root directory of the project:
 
 ### Dependencies
 
 - React (minimum version 18.2.0)
 - axios
 - json-server
+
+npm run json-server
+
+or
+
+yarn json-server
+
+By default, the server will run on http://localhost:3000 and use the db.json file in the root directory as the data file. You can also specify a different port or data file by passing in the appropriate options to the command. For example:
+
+json-server --watch db-prod.json --port 3001
+
+This will start the server on http://localhost:3001 and use the db-prod.json file as the data file.
+
+Please be aware that this command assumes that you have json-server installed globally. If you don't, you could either install it globally by doing npm i -g json-server or use npx json-server instead of `json-server`
+
+
+
+
 
 ## Built With
 
