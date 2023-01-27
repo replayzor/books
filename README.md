@@ -19,20 +19,11 @@ git clone https://github.com/replayzor/book-app.git
 
 2. Install dependencies
 
-npm install
-
-or
-
-yarn install
-
+npm install or yarn install
 
 3. Start the development server
 
-npm start
-
-or
-
-yarn start
+npm start or yarn start
 
 ### Running the JSON Server
 
@@ -44,11 +35,7 @@ This app uses json-server to simulate a REST API for development purposes. To st
 - axios
 - json-server
 
-npm run json-server
-
-or
-
-yarn json-server
+npm run json-server or yarn json-server
 
 By default, the server will run on http://localhost:3000 and use the db.json file in the root directory as the data file. You can also specify a different port or data file by passing in the appropriate options to the command. For example:
 
