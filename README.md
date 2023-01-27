@@ -1,4 +1,4 @@
-# Book App
+# Books App
 
 A book management app built with React that utilizes the useContext, useCallback, useState, and useEffect hooks. It has four main components - a list view, show view, and edit view for books. The app communicates with a JSON server using the axios library.
 
