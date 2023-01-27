@@ -56,7 +56,7 @@ json-server --watch db-prod.json --port 3001
 
 This will start the server on http://localhost:3001 and use the db-prod.json file as the data file.
 
-Please be aware that this command assumes that you have json-server installed globally. If you don't, you could either install it globally by doing npm i -g json-server or use npx json-server instead of `json-server`
+Please be aware that this command assumes that you have json-server installed globally. If you don't, you could either install it globally by doing `npm i -g json-server` or use `npx json-server` instead of `json-server`
 
 
 
